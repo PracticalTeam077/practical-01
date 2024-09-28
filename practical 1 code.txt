@@ -2,16 +2,16 @@
 #include <stdlib.h>
 #include <unistd.h>// sleep
 
-void displayLight(int r, int g, int b, const char *message)  {
-    
+void displayLight(int r, int g, int b, const char *message) 
+{
+    printf("\033[38;2;%d;%d;%dm%s\033[0m\n", r, g, b, message);
 }
-
 int main() {
     int green, orange, red;
     
     printf("Enter sleep duration for Green Light (in seconds): ");
     scanf("%d", &green);
-    printf("\033[38;2;%d;%d;%dm%s\033[0m\n", r, g, b, message);
+
     printf("Enter sleep duration for Orange Light (in seconds): ");
     scanf("%d", &orange);
 
@@ -26,9 +26,12 @@ int main() {
 
         displayLight(255, 165, 0, "Orange Light");//Orange
         sleep(orange);
-
+        
         displayLight(255, 0, 0, "Red Light");//Red
         sleep(red);
+    
+        displayLight(255, 165, 0, "Orange Light\n");//Orange
+        sleep(orange);
     }
 
 
