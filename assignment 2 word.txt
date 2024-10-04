@@ -1,0 +1,69 @@
+Requirement Gathering:
+customer wants a software for promotion criteria of the employee salary.
+ 
+Design:
+Algorithm:
+ 
+Step 1 -: Start 
+Step 2 -:  Input, ye = years of experience
+                             rE = required experience
+                            pR = performing rating
+                            rR = required rating
+                            cS = current salary
+                            nS = new salary
+ 
+Step 3 -: Create an employee instance.
+Prompt the user to input the employee's years of experience.
+Prompt the user to input the employee's performance rating.  
+Step 4 -: Checking Promotion Eligibility
+If the employee's years of experience are greater than or equal to re and performance rating is greater than or equal to rR, set eligibility to 'Y'.
+Otherwise, set eligibility to 'N'.
+Step 5-: If the employee is eligible for promotion:
+Prompt for the current salary.
+Calculate the new salary based on the performance rating:
+If performance rating is 3 or above, double the current salary.
+If below 3, increase current salary by 45%.
+Display the new salary
+Step 6-: If the employee is not eligible:
+Set current and new salary to 0.
+Inform the user that the employee is not eligible for promotion.
+Store the employee record in the array.
+Prompt the user to decide whether to process another employee or exit.
+ 
+Step 7-: Display Results for all employees:
+After exiting, iterate through the stored employee records and print each employee's details, including eligibility and salary information.
+ 
+ step8-: Exit Program:
+Print a goodbye message and terminate the program.
+ 
+Implementation:
+WE are performing this practical in C language as per the requirement of the project 
+ 
+Testing:
+We have successfully excited the program which is the company requirement for promotion criteria. 
+ 
+Deployment:
+We have published code on GITHUB 
+ 
+Maintenance:
+In this we will apply 25% maintenance rule that is if maintenance is more than 25% then replace the module, upgrade or rebuild the software.
+ 
+Websites Used:
+W3 school – for loops 
+Coding with Harry – for Character set
+Learn C.com-For condition
+Shortcuts for the code 
+ Shortcut:
+Ye – year of experience
+Re – required experience
+Pr – performance rating
+rR – required rating
+cS – current salary
+nS – new salary
+
+
+
+
+
+
+
