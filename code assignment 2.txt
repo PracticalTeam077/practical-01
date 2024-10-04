@@ -1,0 +1,120 @@
+#include <stdio.h>
+s
+typedef struct
+{
+    int ye;
+    float pr;
+    char eligibility;
+    float cS;
+    float nS;
+} Employee;
+
+
+int main()
+{
+    int re;   // experience for promotion
+    float rR; // rating for promotion
+    int option;
+    Employee employees[100]; // Array
+    int count = 0;           // Number of employees code has inputs
+
+
+    do
+    {
+        // Company inputs
+        printf("Enter the required years of experience for promotion: ");
+        scanf("%d", &re);
+
+
+        printf("Enter the required performance rating for promotion (1 to 5): ");
+        scanf("%f", &rR);
+
+
+        //(employee should enter his details)
+        Employee emp;
+
+
+        printf("\nEnter the employee's years of experience: ");
+        scanf("%d", &emp.ye);
+
+
+        printf("Enter the employee's performance rating (1 to 5): ");
+        scanf("%f", &emp.pr);
+
+
+        // eligibility for promotions
+        if (emp.ye >= re && emp.pr >= rR)
+        {
+            emp.eligibility = 'Y'; // Eligible for promotion
+        }
+        else
+        {
+            emp.eligibility = 'N'; // Not eligible for promotion
+        }
+
+
+        // If eligible, calculate new salary
+        if (emp.eligibility == 'Y')
+        {
+            printf("The employee is eligible for promotion.\n");
+
+
+            printf("Enter current salary: ");
+            scanf("%f", &emp.cS);
+
+
+            // Salary increment based on there
+            if (emp.pr >= 3.0)
+            {
+                emp.nS = emp.cS * 2.00; // increase
+            }
+            else
+            {
+                emp.nS = emp.cS * 1.45; // less increase
+            }
+
+
+            printf("New salary after promotion: %.2f\n", emp.nS);
+        }
+        else
+        {
+            printf("The employee is not eligible for promotion.\n");
+            emp.cS = 0.0;
+            emp.nS = 0.0;
+        }
+
+
+        // Store the employee data
+        employees[count++] = emp;
+
+
+        // Exit 0 or agian 1
+        printf("\nEnter 1 to check another employee or 0 to exit: ");
+        scanf("%d", &option);
+
+
+    } while (option == 1);
+
+
+    // results
+    printf("\nResults for all employees:\n");
+    for (int i = 0; i < count; i++)
+    {
+        printf("\nEmployee %d:\n", i + 1);
+        printf("Years of Experience: %d\n", employees[i].ye);
+        printf("Performance Rating: %.2f\n", employees[i].pr);
+        printf("Eligibility for Promotion: %c\n", employees[i].eligibility);
+        if (employees[i].eligibility == 'Y')
+        {
+            printf("Current Salary: %.2f\n", employees[i].cS);
+            printf("New Salary after Promotion: %.2f\n", employees[i].nS);
+        }
+    }
+
+
+    printf("Exiting the program. Goodbye!\n");
+    return 0;
+}
+
+
+
